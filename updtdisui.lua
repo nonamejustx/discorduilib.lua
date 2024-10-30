@@ -3142,6 +3142,44 @@ function DiscordLib:Window(text)
 				
 				ChannelHolder.CanvasSize = UDim2.new(0,0,0,ChannelHolderLayout.AbsoluteContentSize.Y)
 			end
+
+			function DiscordLib:Paragraph(parent, Title, Content)
+				local ParagraphFrame = Instance.new("Frame")
+				ParagraphFrame.Parent = parent
+				ParagraphFrame.Size = UDim2.new(1, -20, 0, 120)
+				ParagraphFrame.BackgroundColor3 = Color3.fromRGB(47, 49, 54)
+				ParagraphFrame.BorderSizePixel = 0
+			
+				local UICorner = Instance.new("UICorner")
+				UICorner.CornerRadius = UDim.new(0, 6)
+				UICorner.Parent = ParagraphFrame
+			
+				-- Создание заголовка
+				local TitleLabel = Instance.new("TextLabel")
+				TitleLabel.Parent = ParagraphFrame
+				TitleLabel.Size = UDim2.new(1, -10, 0, 20)
+				TitleLabel.Position = UDim2.new(0, 5, 0, 5)
+				TitleLabel.BackgroundTransparency = 1
+				TitleLabel.Text = Title
+				TitleLabel.TextColor3 = Color3.fromRGB(220, 221, 222)
+				TitleLabel.Font = Enum.Font.GothamBold
+				TitleLabel.TextSize = 14
+				TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
+			
+				-- Создание текстового блока для описания
+				local ContentLabel = Instance.new("TextLabel")
+				ContentLabel.Parent = ParagraphFrame
+				ContentLabel.Size = UDim2.new(1, -10, 1, -30)
+				ContentLabel.Position = UDim2.new(0, 5, 0, 25)
+				ContentLabel.BackgroundTransparency = 1
+				ContentLabel.Text = Content
+				ContentLabel.TextColor3 = Color3.fromRGB(184, 186, 189)
+				ContentLabel.Font = Enum.Font.Gotham
+				ContentLabel.TextSize = 13
+				ContentLabel.TextWrapped = true
+				ContentLabel.TextXAlignment = Enum.TextXAlignment.Left
+				ContentLabel.TextYAlignment = Enum.TextYAlignment.Top
+			end
 			
 			function ChannelContent:Label(text)
 				local Label = Instance.new("TextButton")
@@ -3245,40 +3283,3 @@ function DiscordLib:Window(text)
 	return ServerHold
 end
 return DiscordLib
-function DiscordLib:Paragraph(parent, Title, Content)
-    local ParagraphFrame = Instance.new("Frame")
-    ParagraphFrame.Parent = parent
-    ParagraphFrame.Size = UDim2.new(1, -20, 0, 120)
-    ParagraphFrame.BackgroundColor3 = Color3.fromRGB(47, 49, 54)
-    ParagraphFrame.BorderSizePixel = 0
-
-    local UICorner = Instance.new("UICorner")
-    UICorner.CornerRadius = UDim.new(0, 6)
-    UICorner.Parent = ParagraphFrame
-
-    -- Создание заголовка
-    local TitleLabel = Instance.new("TextLabel")
-    TitleLabel.Parent = ParagraphFrame
-    TitleLabel.Size = UDim2.new(1, -10, 0, 20)
-    TitleLabel.Position = UDim2.new(0, 5, 0, 5)
-    TitleLabel.BackgroundTransparency = 1
-    TitleLabel.Text = Title
-    TitleLabel.TextColor3 = Color3.fromRGB(220, 221, 222)
-    TitleLabel.Font = Enum.Font.GothamBold
-    TitleLabel.TextSize = 14
-    TitleLabel.TextXAlignment = Enum.TextXAlignment.Left
-
-    -- Создание текстового блока для описания
-    local ContentLabel = Instance.new("TextLabel")
-    ContentLabel.Parent = ParagraphFrame
-    ContentLabel.Size = UDim2.new(1, -10, 1, -30)
-    ContentLabel.Position = UDim2.new(0, 5, 0, 25)
-    ContentLabel.BackgroundTransparency = 1
-    ContentLabel.Text = Content
-    ContentLabel.TextColor3 = Color3.fromRGB(184, 186, 189)
-    ContentLabel.Font = Enum.Font.Gotham
-    ContentLabel.TextSize = 13
-    ContentLabel.TextWrapped = true
-    ContentLabel.TextXAlignment = Enum.TextXAlignment.Left
-    ContentLabel.TextYAlignment = Enum.TextYAlignment.Top
-end
