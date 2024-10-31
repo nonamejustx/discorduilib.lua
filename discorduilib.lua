@@ -2231,7 +2231,7 @@ function DiscordLib:Window(text)
 				Icon.BackgroundTransparency = 1.000
 				Icon.BorderColor3 = Color3.fromRGB(27, 42, 53)
 				Icon.Position = UDim2.new(0, 8, 0, 8)
-				Icon.Size = UDim2.new(0, 13, 0, 13)
+				Icon.Size = UDim2.new(0, 25, 0, 25)
 				Icon.Image = "http://www.roblox.com/asset/?id=6035047409"
 				Icon.ImageColor3 = Color3.fromRGB(114, 118, 125)
 				
